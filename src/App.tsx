@@ -5,6 +5,7 @@ import {
   ScrollView,
   StatusBar,
   StyleSheet,
+  Text,
   useColorScheme,
   View,
 } from 'react-native';
@@ -12,12 +13,13 @@ import {
 import PokemonCard from './components/PokemonCard';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <PokemonCard />
+        <View>
+          <Text>Main branch</Text>
+          <Text>Goto other branch to see my react native exercise codes.</Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
