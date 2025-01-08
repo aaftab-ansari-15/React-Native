@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Charmander",
+    "image": "Charmander",
+    "type": "Fire",
+    "hp": 39,
+    "moves": ["Scratch", "Ember", "Growl", "Leer"],
+    "weaknesses": ["Water", "Rock"]
+  },
+  {
+    "name": "Squirtle",
+    "image": "Squirtle",
+    "type": "Water",
+    "hp": 44,
+    "moves": ["Tackle", "Water Gun", "Tail Whip", "Withdraw"],
+    "weaknesses": ["Electric", "Grass"]
+  },
+  {
+    "name": "Bulbasaur",
+    "image": "Bulbasaur",
+    "type": "Grass",
+    "hp": 45,
+    "moves": ["Tackle", "Vine Whip", "Growl", "Leech Seed"],
+    "weaknesses": ["Fire", "Ice", "Flying", "Psychic"]
+  },
+  {
+    "name": "Pikachu",
+    "image": "Pikachu",
+    "type": "Electric",
+    "hp": 35,
+    "moves": ["Quick Attack", "Thunderbolt", "Tail Whip", "Growl"],
+    "weaknesses": ["Ground"]
+  }
+]
