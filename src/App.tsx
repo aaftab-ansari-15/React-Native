@@ -1,19 +1,19 @@
-import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import PokemonFlatList from './components/PokemonFlatList';
-function App(): React.JSX.Element {
+import * as React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './screens/HomeScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import AboutScreen from './screens/AboutScreen';
+import {RootStackParamList} from './type';
+const Stack = createNativeStackNavigator<RootStackParamList>();
+export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <PokemonFlatList />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="About" component={AboutScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-  },
-});
-
-export default App;
