@@ -28,49 +28,56 @@ const PokemonFlatList = () => {
   const renderSeparator = () => <View style={{height: 16}} />;
 
   return (
-    // <View style={styles.scrollView}>
-    //   <FlatList
-    //     data={pokemonList}
-    //     renderItem={renderItem}
-    //     keyExtractor={item => item.id.toString()}
-    //     ItemSeparatorComponent={renderSeparator}
-    //     ListEmptyComponent={<Text>No Items Found</Text>}
-    //     ListHeaderComponent={
-    //       <Text style={styles.headerText}>Pokemon List</Text>
-    //     }
-    //     ListFooterComponent={<Text style={styles.footerText}>End of list</Text>}
-    //     // horizontal={true}
-    //   />
-    // </View>
-    <View style={styles.scrollView}>
-      <SectionList
-        sections={groupedPokemonList}
-        renderItem={({item}) => {
-          return (
-            <View style={styles.card}>
-              <Text style={styles.cardText}>{item}</Text>
-            </View>
-          );
-        }}
-        renderSectionHeader={({section}) => (
-          <Text style={styles.sectionHeaderText}>{section.type}</Text>
-        )}
-        ItemSeparatorComponent={() => (
-          <View
-            style={{
-              height: 16,
-            }}
-          />
-        )}
-        SectionSeparatorComponent={() => (
-          <View
-            style={{
-              height: 16,
-            }}
-          />
-        )}
-      />
-    </View>
+    <>
+      <View style={styles.scrollView}>
+        <FlatList
+          data={pokemonList.map(pokemon => ({
+            ...pokemon,
+            id: Number(pokemon.id),
+          }))}
+          renderItem={renderItem}
+          keyExtractor={item => item.id.toString()}
+          ItemSeparatorComponent={renderSeparator}
+          ListEmptyComponent={<Text>No Items Found</Text>}
+          ListHeaderComponent={
+            <Text style={styles.headerText}>Pokemon List</Text>
+          }
+          ListFooterComponent={
+            <Text style={styles.footerText}>End of list</Text>
+          }
+          // horizontal={true}
+        />
+      </View>
+      <View style={styles.scrollView}>
+        <SectionList
+          sections={groupedPokemonList}
+          renderItem={({item}) => {
+            return (
+              <View style={styles.card}>
+                <Text style={styles.cardText}>{item}</Text>
+              </View>
+            );
+          }}
+          renderSectionHeader={({section}) => (
+            <Text style={styles.sectionHeaderText}>{section.type}</Text>
+          )}
+          ItemSeparatorComponent={() => (
+            <View
+              style={{
+                height: 16,
+              }}
+            />
+          )}
+          SectionSeparatorComponent={() => (
+            <View
+              style={{
+                height: 16,
+              }}
+            />
+          )}
+        />
+      </View>
+    </>
   );
 };
 
