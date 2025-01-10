@@ -1,6 +1,6 @@
 export type RootStackParamList = {
-    Home: undefined;
-    Profile: undefined;
-    About: undefined;
+    Home: {result?:string};
+    Profile: {name?: string};
+    About: {name?:string};
     // You can add other screen names here
   };
