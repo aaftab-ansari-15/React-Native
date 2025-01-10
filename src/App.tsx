@@ -10,8 +10,21 @@ const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
+      <Drawer.Navigator
+        screenOptions={{
+          headerTintColor: 'red',
+          drawerActiveTintColor: 'red',
+          drawerActiveBackgroundColor: '#ffc7b8',
+          drawerContentStyle: {backgroundColor: '#c6cbef'},
+        }}>
+        <Drawer.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            title: 'My Home',
+            drawerLabel: 'Home Label',
+          }}
+        />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
