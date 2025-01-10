@@ -13,7 +13,6 @@ const HomeScreen = () => {
         backgroundColor: '#fff',
       }}>
       <Text>Home</Text>
-      <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} />
       <Button
         title="Open Profile"
         onPress={() => navigation.jumpTo('Profile')}
