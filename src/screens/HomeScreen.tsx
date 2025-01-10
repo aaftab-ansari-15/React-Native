@@ -1,21 +1,22 @@
 import {Button, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
-import {RootStackParamList} from '../type';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-type HomeScreenNavigationProp = NativeStackNavigationProp<
-  RootStackParamList,
-  'Home'
->;
 
 const HomeScreen = () => {
-  const navigation = useNavigation<HomeScreenNavigationProp>();
+  const navigation: any = useNavigation();
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+      }}>
+      <Text>Home</Text>
+      <Button title="Toggle Drawer" onPress={() => navigation.toggleDrawer()} />
       <Button
-        title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
+        title="Open Profile"
+        onPress={() => navigation.jumpTo('Profile')}
       />
     </View>
   );

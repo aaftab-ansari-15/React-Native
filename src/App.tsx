@@ -1,19 +1,23 @@
-import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {StyleSheet, Text, View} from 'react-native';
+import React from 'react';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
-import AboutScreen from './screens/AboutScreen';
-import {RootStackParamList} from './type';
-const Stack = createNativeStackNavigator<RootStackParamList>();
-export default function App() {
+import {NavigationContainer} from '@react-navigation/native';
+
+const Drawer = createDrawerNavigator();
+
+const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="About" component={AboutScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />
-      </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;
+
+const styles = StyleSheet.create({});
